@@ -1,0 +1,26 @@
+# docker-compose.yaml
+version: '3.8'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    build: .
+    privileged: true
+    user: root
+    ports:
+      - 8000:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    networks:
+      - nasir
+networks:
+  nasir:
+    external: true
+    name: nasir
+volumes:
+  jenkins:
+    external: true
+    name: jenkins
