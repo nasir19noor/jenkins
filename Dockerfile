@@ -14,3 +14,6 @@ RUN mv terraform /usr/bin
 RUN curl -LO https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.7/2022-10-31/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN cp kubectl /usr/local/bin
+RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+RUN mv /tmp/eksctl /usr/local/bin
+
