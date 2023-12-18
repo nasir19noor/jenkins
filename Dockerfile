@@ -20,7 +20,7 @@ RUN unzip terraform_1.6.4_linux_amd64.zip
 RUN mv terraform /usr/bin
 
 # install kubectl
-RUN curl -LO https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.7/2022-10-31/bin/linux/amd64/kubectl
+RUN curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN cp kubectl /usr/local/bin
 
